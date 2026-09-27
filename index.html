@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelar Karya PPG Calon Guru 2026 | Kelompok Jelita</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FFF7ED',
+                        'soft-cream': '#FFF9F5',
+                        'soft-pink': '#F8DDE5',
+                        pinkAccent: '#EFC3CF',
+                        'dusty-pink': '#DFA8B8',
+                        brown: '#6B4F4F',
+                        'dark-brown': '#493737',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FFF7ED; color: #493737; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-soft-pink selection:text-dark-brown">
+
+    <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-soft-pink shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="#" onclick="switchTab('home')" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-full bg-soft-pink flex items-center justify-center text-dark-brown font-bold shadow-inner group-hover:scale-105 transition-transform">🌸</div>
+                    <div>
+                        <span class="text-lg font-extrabold tracking-wide text-dark-brown block leading-tight">GELAR KARYA</span>
+                        <span class="text-xs font-semibold text-dusty-pink tracking-wider">PPG CALON GURU 2026 • KELOMPOK JELITA</span>
+                    </div>
+                </a>
+                <nav class="hidden md:flex items-center space-x-3">
+                    <button onclick="switchTab('home')" id="nav-home" class="nav-btn text-sm font-bold tracking-wider py-2 px-5 rounded-full bg-soft-pink text-dark-brown transition-all shadow-sm">HOME</button>
+                    <button onclick="switchTab('absensi')" id="nav-absensi" class="nav-btn text-sm font-bold tracking-wider py-2 px-5 rounded-full text-dark-brown/80 hover:bg-soft-cream transition-all">ABSENSI</button>
+                    <button onclick="switchTab('galeri')" id="nav-galeri" class="nav-btn text-sm font-bold tracking-wider py-2 px-5 rounded-full text-dark-brown/80 hover:bg-soft-cream transition-all">GALERI</button>
+                </nav>
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="p-2 rounded-xl text-dark-brown hover:bg-soft-pink/50 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-soft-cream border-b border-soft-pink px-4 py-3 space-y-2">
+            <button onclick="switchTab('home'); toggleMobileMenu();" class="block w-full text-left px-4 py-2 rounded-xl font-bold text-dark-brown hover:bg-soft-pink/50">HOME</button>
+            <button onclick="switchTab('absensi'); toggleMobileMenu();" class="block w-full text-left px-4 py-2 rounded-xl font-bold text-dark-brown hover:bg-soft-pink/50">ABSENSI</button>
+            <button onclick="switchTab('galeri'); toggleMobileMenu();" class="block w-full text-left px-4 py-2 rounded-xl font-bold text-dark-brown hover:bg-soft-pink/50">GALERI</button>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- HOME VIEW -->
+        <div id="view-home" class="view-section relative min-h-[calc(100vh-10rem)] flex items-center justify-center px-4 py-12">
+            <div class="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-soft-pink/30 blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-20 -right-20 w-80 h-80 rounded-full bg-pinkAccent/20 blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-3xl mx-auto text-center space-y-8 relative z-10 animate-fadeIn">
+                <div class="inline-flex items-center space-x-2 bg-soft-pink/70 px-5 py-2 rounded-full shadow-sm">
+                    <span>🌸</span>
+                    <span class="text-xs sm:text-sm font-extrabold text-dark-brown tracking-wider uppercase">Stand Gelar Karya • Kelompok Jelita</span>
+                </div>
+                <div class="space-y-3">
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-dark-brown tracking-tight leading-tight">
+                        GELAR KARYA <br />
+                        <span class="text-dusty-pink">PPG CALON GURU 2026</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl font-bold text-dark-brown/80 tracking-wide">KELOMPOK JELITA</p>
+                </div>
+                <div class="bg-white/80 backdrop-blur-md p-6 sm:p-8 rounded-3xl shadow-xl border border-soft-pink space-y-4 max-w-2xl mx-auto">
+                    <p class="text-base sm:text-lg font-bold text-dark-brown">Selamat Datang di Stand Gelar Karya Kelompok Jelita</p>
+                    <p class="text-sm sm:text-base text-dark-brown/80 font-medium">Silakan lakukan absensi kunjungan dengan mengisi identitas singkat dan mengambil foto dokumentasi.</p>
+                    <div class="pt-4 border-t border-soft-cream flex flex-col sm:flex-row justify-center items-center gap-3 text-xs sm:text-sm font-semibold text-dark-brown/90">
+                        <div class="bg-soft-cream px-4 py-2 rounded-xl border border-soft-pink flex items-center space-x-2"><span>📅</span><span>Selasa, 27 Oktober 2026</span></div>
+                        <div class="bg-soft-cream px-4 py-2 rounded-xl border border-soft-pink flex items-center space-x-2"><span>📍</span><span>Kampus Universitas Widya Dharma Klaten</span></div>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-2">
+                    <button onclick="switchTab('absensi')" class="w-full sm:w-auto bg-dusty-pink hover:bg-pinkAccent text-white font-extrabold px-8 py-4 rounded-2xl shadow-lg transition-transform hover:scale-105 active:scale-95 flex items-center justify-center space-x-2">
+                        <span>📸 ABSEN KUNJUNGAN</span>
+                    </button>
+                    <button onclick="switchTab('galeri')" class="w-full sm:w-auto bg-white hover:bg-soft-cream text-dark-brown font-extrabold px-8 py-4 rounded-2xl shadow-md border-2 border-soft-pink transition-transform hover:scale-105 active:scale-95 flex items-center justify-center space-x-2">
+                        <span>💗 LIHAT GALERI</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABSENSI VIEW -->
+        <div id="view-absensi" class="view-section hidden py-12 px-4 sm:px-6 animate-fadeIn">
+            <div class="max-w-xl mx-auto space-y-8">
+                <div class="text-center space-y-2">
+                    <h1 class="text-2xl sm:text-4xl font-extrabold text-dark-brown">ABSENSI KUNJUNGAN</h1>
+                    <p class="text-base font-bold text-dusty-pink">Gelar Karya PPG Calon Guru 2026</p>
+                    <p class="text-xs sm:text-sm font-semibold text-dark-brown/70">Kelompok Jelita • Universitas Widya Dharma Klaten</p>
+                </div>
+                
+                <form id="attendance-form" onsubmit="handleFormSubmit(event)" class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-soft-pink space-y-6">
+                    <div class="space-y-2">
+                        <label class="block text-sm font-bold text-dark-brown">Nama Lengkap <span class="text-dusty-pink">*</span></label>
+                        <input type="text" id="input-name" required placeholder="Masukkan nama lengkap" class="w-full px-4 py-3.5 rounded-2xl bg-soft-cream border border-soft-pink focus:outline-none focus:ring-2 focus:ring-dusty-pink text-dark-brown font-medium">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="block text-sm font-bold text-dark-brown">Asal / Instansi <span class="text-dusty-pink">*</span></label>
+                        <input type="text" id="input-institution" required placeholder="Contoh: Universitas Widya Dharma Klaten" class="w-full px-4 py-3.5 rounded-2xl bg-soft-cream border border-soft-pink focus:outline-none focus:ring-2 focus:ring-dusty-pink text-dark-brown font-medium">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="block text-sm font-bold text-dark-brown">Status Pengunjung <span class="text-dusty-pink">*</span></label>
+                        <select id="input-status" required class="w-full px-4 py-3.5 rounded-2xl bg-soft-cream border border-soft-pink focus:outline-none focus:ring-2 focus:ring-dusty-pink text-dark-brown font-medium">
+                            <option value="" disabled selected>-- Pilih Status Pengunjung --</option>
+                            <option value="Mahasiswa">Mahasiswa</option>
+                            <option value="Guru">Guru</option>
+                            <option value="Dosen">Dosen</option>
+                            <option value="Siswa">Siswa</option>
+                            <option value="Tamu Undangan">Tamu Undangan</option>
+                            <option value="Umum">Umum</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </div>
+
+                    <!-- Camera Section -->
+                    <div class="space-y-2">
+                        <label class="block text-sm font-bold text-dark-brown">Foto Pengunjung <span class="text-dusty-pink">*</span></label>
+                        <div class="relative w-full aspect-4/3 sm:aspect-video rounded-2xl bg-soft-cream border-2 border-soft-pink shadow-inner overflow-hidden flex flex-col items-center justify-center p-2">
+                            <!-- Placeholder / Initial state -->
+                            <div id="cam-placeholder" class="text-center p-6 space-y-3">
+                                <div class="w-14 h-14 mx-auto bg-soft-pink rounded-full flex items-center justify-center text-2xl shadow-sm">📸</div>
+                                <p class="text-xs sm:text-sm text-dark-brown/80">Aktifkan kamera perangkat Anda untuk mengambil foto kunjungan.</p>
+                                <button type="button" onclick="startCamera()" class="bg-dark-brown hover:bg-brown text-white font-bold px-6 py-2.5 rounded-full text-sm shadow transition-transform hover:scale-105">Aktifkan Kamera</button>
+                            </div>
+                            <!-- Live Camera Video -->
+                            <div id="cam-active-box" class="hidden relative w-full h-full">
+                                <video id="camera-stream" autoplay playsinline muted class="w-full h-full object-cover rounded-xl transform -scale-x-100"></video>
+                                <div class="absolute bottom-3 inset-x-0 flex justify-center">
+                                    <button type="button" onclick="takeSnapshot()" class="bg-dusty-pink hover:bg-pinkAccent text-white font-bold px-6 py-2.5 rounded-full shadow-lg text-sm flex items-center space-x-2"><span>📷 Ambil Foto</span></button>
+                                </div>
+                            </div>
+                            <!-- Preview Captured Photo -->
+                            <div id="cam-preview-box" class="hidden relative w-full h-full">
+                                <img id="captured-img-tag" src="" alt="Captured" class="w-full h-full object-cover rounded-xl">
+                                <div class="absolute bottom-3 right-3 bg-dark-brown/80 text-white text-xs px-3 py-1 rounded-full font-bold shadow">Foto Tersimpan ✓</div>
+                            </div>
+                        </div>
+                        <div id="cam-error" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-2 rounded-xl text-xs"></div>
+                        <div id="retake-container" class="hidden flex justify-center pt-1">
+                            <button type="button" onclick="retakePhoto()" class="bg-soft-pink hover:bg-pinkAccent text-dark-brown font-bold px-4 py-1.5 rounded-full text-xs shadow-sm">🔄 Ambil Ulang Foto</button>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="w-full bg-dusty-pink hover:bg-pinkAccent text-white font-extrabold py-4 rounded-2xl shadow-lg transition-transform active:scale-95 text-base flex items-center justify-center space-x-2">
+                        <span>💗 SIMPAN ABSENSI</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- GALERI VIEW -->
+        <div id="view-galeri" class="view-section hidden py-12 px-4 sm:px-6 max-w-7xl mx-auto space-y-8 animate-fadeIn">
+            <div class="text-center space-y-3">
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-dark-brown">💗 GALERI ABSENSI</h1>
+                <p class="text-base font-bold text-dusty-pink">Pengunjung Gelar Karya Kelompok Jelita</p>
+                <div class="inline-block bg-white px-6 py-2.5 rounded-full shadow-md border border-soft-pink font-extrabold text-sm text-dark-brown">
+                    Total Pengunjung: <span id="visitor-count">3</span>
+                </div>
+            </div>
+            
+            <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                <!-- Sample Gallery Cards -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-soft-pink flex flex-col hover:shadow-xl transition-all">
+                    <div class="aspect-square bg-soft-cream overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60" alt="Visitor" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 space-y-1">
+                        <div class="inline-block bg-soft-pink/60 text-dark-brown text-[10px] font-bold px-2.5 py-0.5 rounded-full mb-1">Mahasiswa</div>
+                        <h3 class="font-extrabold text-dark-brown text-sm truncate">Siti Rahma, S.Pd.</h3>
+                        <p class="text-xs text-dusty-pink font-semibold truncate">SMN 1 Klaten</p>
+                        <div class="pt-2 border-t border-soft-cream text-[11px] text-dark-brown/70 flex justify-between font-medium">
+                            <span>🕒 Kunjungan</span>
+                            <span>10:15 WIB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-soft-pink flex flex-col hover:shadow-xl transition-all">
+                    <div class="aspect-square bg-soft-cream overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=60" alt="Visitor" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 space-y-1">
+                        <div class="inline-block bg-soft-pink/60 text-dark-brown text-[10px] font-bold px-2.5 py-0.5 rounded-full mb-1">Dosen</div>
+                        <h3 class="font-extrabold text-dark-brown text-sm truncate">Dr. Budi Santoso</h3>
+                        <p class="text-xs text-dusty-pink font-semibold truncate">Universitas Widya Dharma</p>
+                        <div class="pt-2 border-t border-soft-cream text-[11px] text-dark-brown/70 flex justify-between font-medium">
+                            <span>🕒 Kunjungan</span>
+                            <span>09:30 WIB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-soft-pink flex flex-col hover:shadow-xl transition-all">
+                    <div class="aspect-square bg-soft-cream overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&auto=format&fit=crop&q=60" alt="Visitor" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 space-y-1">
+                        <div class="inline-block bg-soft-pink/60 text-dark-brown text-[10px] font-bold px-2.5 py-0.5 rounded-full mb-1">Mahasiswa</div>
+                        <h3 class="font-extrabold text-dark-brown text-sm truncate">Dewi Lestari</h3>
+                        <p class="text-xs text-dusty-pink font-semibold truncate">PPG Calon Guru</p>
+                        <div class="pt-2 border-t border-soft-cream text-[11px] text-dark-brown/70 flex justify-between font-medium">
+                            <span>🕒 Kunjungan</span>
+                            <span>08:45 WIB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SUCCESS MODAL POPUP -->
+    <div id="success-modal" class="hidden fixed inset-0 z-50 bg-dark-brown/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl border-2 border-soft-pink space-y-5 animate-fadeIn text-center">
+            <div class="w-16 h-16 mx-auto bg-soft-pink rounded-full flex items-center justify-center text-3xl shadow-inner">🎉</div>
+            <div class="space-y-1">
+                <h2 class="text-xl sm:text-2xl font-extrabold text-dark-brown">ABSENSI BERHASIL!</h2>
+                <p class="text-xs sm:text-sm text-dark-brown/80 font-medium">Terima kasih telah mengunjungi Gelar Karya Kelompok Jelita.</p>
+            </div>
+            <div id="success-details" class="bg-soft-cream p-4 rounded-2xl border border-soft-pink text-left space-y-2 text-xs sm:text-sm">
+                <!-- Injected via JS -->
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 pt-2">
+                <button onclick="closeSuccessModal('home')" class="flex-1 bg-cream hover:bg-soft-cream text-dark-brown font-bold py-3 px-4 rounded-2xl border border-soft-pink text-xs sm:text-sm transition-all">🏠 Beranda</button>
+                <button onclick="closeSuccessModal('galeri')" class="flex-1 bg-dusty-pink hover:bg-pinkAccent text-white font-bold py-3 px-4 rounded-2xl text-xs sm:text-sm shadow transition-all">💗 Lihat Galeri</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-soft-cream border-t border-soft-pink py-8 px-4 text-center text-dark-brown mt-auto">
+        <div class="max-w-4xl mx-auto space-y-2">
+            <p class="font-extrabold text-sm tracking-wide">GELAR KARYA PPG CALON GURU 2026 • KELOMPOK JELITA</p>
+            <p class="text-xs font-semibold text-dusty-pink">Kampus Universitas Widya Dharma Klaten • Selasa, 27 Oktober 2026</p>
+            <div class="pt-1">
+                <span class="inline-block bg-soft-pink/60 px-4 py-1.5 rounded-full text-xs font-semibold text-dark-brown shadow-sm">Terima kasih telah berkunjung 💗</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Backend Vercel Function yang meneruskan data ke Google Apps Script.
+        // Isi APPS_SCRIPT_URL di Vercel Project Settings, lalu deploy ulang.
+        const REMOTE_DATA_ENABLED = true;
+        const DATA_API_URL = '/api/attendance';
+
+        let mediaStream = null;
+        let capturedPhotoData = null;
+        let visitorList = [
+            { name: 'Siti Rahma, S.Pd.', institution: 'SMN 1 Klaten', status: 'Mahasiswa', photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60', time: '10:15 WIB' },
+            { name: 'Dr. Budi Santoso', institution: 'Universitas Widya Dharma', status: 'Dosen', photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=60', time: '09:30 WIB' },
+            { name: 'Dewi Lestari', institution: 'PPG Calon Guru', status: 'Mahasiswa', photo: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&auto=format&fit=crop&q=60', time: '08:45 WIB' }
+        ];
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
+            document.getElementById('view-' + tabId).classList.remove('hidden');
+            
+            // Highlight nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.className = "nav-btn text-sm font-bold tracking-wider py-2 px-5 rounded-full text-dark-brown/80 hover:bg-soft-cream transition-all";
+            });
+            const activeNav = document.getElementById('nav-' + tabId);
+            if (activeNav) {
+                activeNav.className = "nav-btn text-sm font-bold tracking-wider py-2 px-5 rounded-full bg-soft-pink text-dark-brown transition-all shadow-sm";
+            }
+
+            if (tabId === 'galeri') {
+                loadGallery();
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        async function startCamera() {
+            const errBox = document.getElementById('cam-error');
+            errBox.classList.add('hidden');
+            try {
+                mediaStream = await navigator.mediaDevices.getUserMedia({
+                    video: { width: { ideal: 1280 }, height: { ideal: 720 }, facingMode: 'user' },
+                    audio: false
+                });
+                const videoEl = document.getElementById('camera-stream');
+                videoEl.srcObject = mediaStream;
+                
+                document.getElementById('cam-placeholder').classList.add('hidden');
+                document.getElementById('cam-active-box').classList.remove('hidden');
+            } catch (err) {
+                console.error(err);
+                errBox.textContent = "Tidak dapat mengakses kamera. Pastikan izin kamera telah diberikan pada perangkat Anda atau gunakan simulasi foto.";
+                errBox.classList.remove('hidden');
+                
+                // Fallback simulation for iframe demo constraints
+                capturedPhotoData = "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60";
+                document.getElementById('cam-placeholder').classList.add('hidden');
+                document.getElementById('cam-preview-box').classList.remove('hidden');
+                document.getElementById('captured-img-tag').src = capturedPhotoData;
+                document.getElementById('retake-container').classList.remove('hidden');
+            }
+        }
+
+        function takeSnapshot() {
+            const video = document.getElementById('camera-stream');
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth || 640;
+            canvas.height = video.videoHeight || 480;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            capturedPhotoData = canvas.toDataURL('image/jpeg', 0.85);
+
+            stopCameraStream();
+
+            document.getElementById('cam-active-box').classList.add('hidden');
+            document.getElementById('cam-preview-box').classList.remove('hidden');
+            document.getElementById('captured-img-tag').src = capturedPhotoData;
+            document.getElementById('retake-container').classList.remove('hidden');
+        }
+
+        function stopCameraStream() {
+            if (mediaStream) {
+                mediaStream.getTracks().forEach(track => track.stop());
+                mediaStream = null;
+            }
+        }
+
+        function retakePhoto() {
+            capturedPhotoData = null;
+            document.getElementById('cam-preview-box').classList.add('hidden');
+            document.getElementById('retake-container').classList.add('hidden');
+            startCamera();
+        }
+
+        function compressPhotoDataUrl(dataUrl, maxDimension = 1280, quality = 0.78) {
+            if (!dataUrl || !dataUrl.startsWith('data:image/')) return Promise.resolve(dataUrl);
+            return new Promise((resolve, reject) => {
+                const image = new Image();
+                image.onload = () => {
+                    const scale = Math.min(1, maxDimension / Math.max(image.width, image.height));
+                    const canvas = document.createElement('canvas');
+                    canvas.width = Math.max(1, Math.round(image.width * scale));
+                    canvas.height = Math.max(1, Math.round(image.height * scale));
+                    const context = canvas.getContext('2d', { alpha: false });
+                    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+                    resolve(canvas.toDataURL('image/jpeg', quality));
+                };
+                image.onerror = reject;
+                image.src = dataUrl;
+            });
+        }
+
+        function escapeHtml(value) {
+            return String(value ?? '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('input-name').value.trim();
+            const institution = document.getElementById('input-institution').value.trim();
+            const status = document.getElementById('input-status').value;
+
+            if (!name || !institution || !status) {
+                alert('Semua field wajib diisi.');
+                return;
+            }
+            if (!capturedPhotoData) {
+                alert('Silakan ambil foto pengunjung terlebih dahulu!');
+                return;
+            }
+
+            const submitButton = document.getElementById('submit-btn');
+            const originalButtonHtml = submitButton.innerHTML;
+            submitButton.disabled = true;
+            submitButton.classList.add('opacity-60', 'cursor-wait');
+            submitButton.innerHTML = '<span>⏳ MENYIMPAN...</span>';
+
+            try {
+                const compressedPhoto = await compressPhotoDataUrl(capturedPhotoData);
+                const now = new Date();
+                const timeString = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' }) + ' WIB';
+                let savedPhoto = compressedPhoto;
+
+                if (REMOTE_DATA_ENABLED) {
+                    const response = await fetch(DATA_API_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            action: 'create', name, institution, status,
+                            photoData: compressedPhoto, clientTime: now.toISOString()
+                        })
+                    });
+                    const result = await response.json().catch(() => null);
+                    if (!response.ok || !result || !result.ok) {
+                        throw new Error(result?.error || 'Server tidak dapat menyimpan absensi.');
+                    }
+                    savedPhoto = result.data?.photoUrl || compressedPhoto;
+                }
+
+                visitorList.unshift({ name, institution, status, photo: savedPhoto, time: timeString });
+
+                const detailsBox = document.getElementById('success-details');
+                detailsBox.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <img src="${escapeHtml(savedPhoto)}" alt="Foto ${escapeHtml(name)}" class="w-14 h-14 rounded-xl object-cover border border-soft-pink">
+                        <div>
+                            <p><strong>Nama:</strong> ${escapeHtml(name)}</p>
+                            <p><strong>Instansi:</strong> ${escapeHtml(institution)}</p>
+                            <p><strong>Status:</strong> ${escapeHtml(status)}</p>
+                            <p><strong>Waktu:</strong> ${escapeHtml(timeString)}</p>
+                        </div>
+                    </div>
+                `;
+                document.getElementById('success-modal').classList.remove('hidden');
+            } catch (error) {
+                console.error(error);
+                alert('Absensi belum tersimpan. Periksa koneksi internet atau konfigurasi backend, lalu coba lagi.');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.classList.remove('opacity-60', 'cursor-wait');
+                submitButton.innerHTML = originalButtonHtml;
+            }
+        }
+
+        function closeSuccessModal(targetTab) {
+            document.getElementById('success-modal').classList.add('hidden');
+            document.getElementById('attendance-form').reset();
+            retakePhoto();
+            switchTab(targetTab);
+        }
+
+        async function loadGallery() {
+            if (REMOTE_DATA_ENABLED) {
+                try {
+                    const response = await fetch(`${DATA_API_URL}?action=list`, { headers: { Accept: 'application/json' } });
+                    const result = await response.json().catch(() => null);
+                    if (!response.ok || !result || !result.ok || !Array.isArray(result.data)) {
+                        throw new Error(result?.error || 'Data galeri tidak dapat dimuat.');
+                    }
+                    visitorList = result.data.map(visitor => ({
+                        name: visitor.name,
+                        institution: visitor.institution,
+                        status: visitor.status,
+                        photo: visitor.photoUrl,
+                        time: visitor.time
+                    }));
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+            renderGallery();
+        }
+
+        function renderGallery() {
+            document.getElementById('visitor-count').textContent = visitorList.length;
+            const grid = document.getElementById('gallery-grid');
+            grid.innerHTML = visitorList.map(v => `
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-soft-pink flex flex-col hover:shadow-xl transition-all animate-fadeIn">
+                    <div class="aspect-square bg-soft-cream overflow-hidden relative">
+                        <img src="${escapeHtml(v.photo)}" alt="${escapeHtml(v.name)}" class="w-full h-full object-cover">
+                        <div class="absolute top-3 right-3 bg-dark-brown/70 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full">${escapeHtml(v.status)}</div>
+                    </div>
+                    <div class="p-4 space-y-1">
+                        <h3 class="font-extrabold text-dark-brown text-sm truncate">${escapeHtml(v.name)}</h3>
+                        <p class="text-xs text-dusty-pink font-semibold truncate">${escapeHtml(v.institution)}</p>
+                        <div class="pt-2 border-t border-soft-cream text-[11px] text-dark-brown/70 flex justify-between font-medium">
+                            <span>🕒 Kunjungan</span>
+                            <span>${escapeHtml(v.time)}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>
