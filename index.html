@@ -179,7 +179,7 @@
                 <h1 class="text-3xl sm:text-4xl font-extrabold text-dark-brown">💗 GALERI ABSENSI</h1>
                 <p class="text-base font-bold text-dusty-pink">Pengunjung Gelar Karya Kelompok Jelita</p>
                 <div class="inline-block bg-white px-6 py-2.5 rounded-full shadow-md border border-soft-pink font-extrabold text-sm text-dark-brown">
-                    Total Pengunjung: <span id="visitor-count">3</span>
+                    Total Pengunjung: <span id="visitor-count">0</span>
                 </div>
             </div>
             
@@ -269,11 +269,9 @@
 
         let mediaStream = null;
         let capturedPhotoData = null;
-        let visitorList = [
-            { name: 'Siti Rahma, S.Pd.', institution: 'SMN 1 Klaten', status: 'Mahasiswa', photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60', time: '10:15 WIB' },
-            { name: 'Dr. Budi Santoso', institution: 'Universitas Widya Dharma', status: 'Dosen', photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=60', time: '09:30 WIB' },
-            { name: 'Dewi Lestari', institution: 'PPG Calon Guru', status: 'Mahasiswa', photo: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&auto=format&fit=crop&q=60', time: '08:45 WIB' }
-        ];
+        let visitorList = [];
+        // Hapus kartu demo lama dari markup; kartu galeri dibuat dari data backend.
+        document.getElementById('gallery-grid').innerHTML = '';
 
         function switchTab(tabId) {
             document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
@@ -484,6 +482,10 @@
         function renderGallery() {
             document.getElementById('visitor-count').textContent = visitorList.length;
             const grid = document.getElementById('gallery-grid');
+            if (!visitorList.length) {
+                grid.innerHTML = '<div class="col-span-full bg-white rounded-3xl border border-soft-pink p-8 text-center text-sm font-semibold text-dark-brown/70">Belum ada absensi.</div>';
+                return;
+            }
             grid.innerHTML = visitorList.map(v => `
                 <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-soft-pink flex flex-col hover:shadow-xl transition-all animate-fadeIn">
                     <div class="aspect-square bg-soft-cream overflow-hidden relative">
